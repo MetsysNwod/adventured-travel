@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div style="padding-top: 100px;">
+<p>Logged out!</p>
+<a href="{% url 'login'%}">Click here to login again.</a>
+</div>
+<div>
+    <a href="{% url 'index' %}">Back to home</a>
+</div>
+{% endblock %}

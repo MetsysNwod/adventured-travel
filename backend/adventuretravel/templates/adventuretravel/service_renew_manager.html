@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Renew: {{service_instance.service.activity}}</h1>
+    <p>Borrower: {{service_instance.borrower}}</p>
+    <p {% if service_instance.is_overdue %} class="text-danger"{% endif %}>Due date: {{service_instance.engaged}}</p>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

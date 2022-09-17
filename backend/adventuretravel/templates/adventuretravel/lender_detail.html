@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+ <div style="padding-top: 100px;">
+<h1>Lender: {{ lender }} </h1>
+<p>Tiempo contratado: {{lender.contract_start}} - {% if lender.contract_ends %}{{lender.contract_ends}}{% endif %}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>Services</h4>
+
+<dl>
+{% for service in lender.service_set.all %}
+  <dt><a href="{% url 'service_detail' service.pk %}">{{service}}</a> ({{service.serviceinstance_set.all.count}})</dt>
+  <dd>{{service.summary}}</dd>
+{% endfor %}
+</dl>
+
+</div>
+</div>
+{% endblock %}

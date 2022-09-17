@@ -1,0 +1,64 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<main class="contenedor">
+    <div class="contenedor-circulo-imagen">
+
+        <div class="circulo-naranja">
+
+            <picture>
+                {% load static %}
+                <img src="{% static "imgs/large.jpg" %}" alt="My image">
+            </picture>
+
+        </div>
+    </div>
+
+
+    <div class="texto-inicio">
+
+        <h1>Adventured Travel</h1>
+
+        <p>Vive la experiencia de tus viajes al nivel que prefieres, visita los sitios de tu interés y conoce las
+            personas como si fueras uno mas de la localidad.</p>
+
+
+        {% if user.is_authenticated %}
+        <div class="boton-empezar" style="display:none;">
+            <form action="{% url 'sign_up' %}">
+                <input type="submit" value="Empezar">
+            </form>
+        </div>
+        {% else %}
+        <div class="boton-empezar">
+            <form action="{% url 'sign_up' %}">
+                <input type="submit" value="Empezar">
+            </form>
+        </div>
+        {% endif %}
+
+
+    </div>
+</main>
+<!---
+
+{% if request.user.is_authenticated %}
+
+<div class="sidebar-nav">
+<h2>Dynamic content</h2>
+
+<p>The platform has the following record counts:</p>
+<ul>
+<li><strong>Services:</strong> {{ num_services }}</li>
+<li><strong>Availables:</strong> {{ num_instances }}</li>
+<li><strong>Activities available:</strong> {{ num_instances_available }}</li>
+<li><strong>Lenders:</strong> {{ num_lenders }}</li>
+</ul>
+<p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+</div>
+{% endif %}
+
+--->
+
+
+{% endblock %}

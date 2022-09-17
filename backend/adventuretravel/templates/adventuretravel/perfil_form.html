@@ -1,0 +1,78 @@
+{% extends "base_generic.html" %}
+
+{% block title %} <title>Registrate</title>{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/stylesignup.css' %}">
+
+<section class="home">
+    <div class="formulario-registro">
+        <div class="titulo-form">
+            <h1>Crear cuenta</h1>
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="nombre">
+                <input type="text" name="{{form.username.name}}" id="nombre" autocomplete="name" required
+                    placeholder="Nombre de usuario" >
+            </div>
+
+            <div class="email">
+                <input type="email" name="{{form.email.name}}" id="correo" autocomplete="email" required
+                    placeholder="Correo electronico">
+            </div>
+
+            <div class="first_name">
+                <input type="text" name="{{form.first_name.name}}" id="nombre" autocomplete="name" required
+                    placeholder="Nombre" >
+            </div>
+
+            <div class="last_name">
+                <input type="text" name="{{form.last_name.name}}" id="nombre" autocomplete="name" required
+                    placeholder="Apellido" >
+            </div>
+
+            <div class="password1">
+                <input type="password" name="{{form.password1.name}}" required placeholder="Contraseña">
+            </div>
+
+            <div class="password2">
+                <input type="password" name="{{form.password2.name}}" required placeholder="Verificar contraseña">
+            </div>
+
+            <div class="check-terminos">
+                <input type="checkbox" required id="acepta-terminos" name="aceptar-terminos"
+                    class="aceptarterminos">
+                <p>Aceptar los <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                        onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">Terminos</a> y <a
+                        href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                        onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">Privacidad</a>.
+                </p>
+            </div>
+<!---            {{ form.as_div }} --->
+            <div class="enviar-registro">
+                <input type="submit" value="Registrarme">
+            </div>
+
+            <div class="contenedor-circuloimg-signup">
+                <div class="circulo-rojo">
+        
+                    <picture>
+                        <img src="{% static 'imgs/signup-large.jpg' %}" alt="" />
+                    </picture>
+        
+                </div>
+            </div>
+        
+            <div class="decoradores">
+                <div class="circulo-amarillo"></div>
+                <div class="circulo-naranjasignup"></div>
+        
+            </div>
+        
+
+        </form>
+    </div>
+</section>
+{% endblock content %}

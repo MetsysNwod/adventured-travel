@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div style="padding-top: 100px;">
+<h1>Lender List</h1>
+
+{% if lender_list %}
+  <ul>
+
+  {% for lender in lender_list %}
+    <li>
+      <a href="{{ lender.get_absolute_url }}">
+      {{ lender }} ({{lender.contract_start}} - {% if lender.contract_ends %}{{lender.contract_ends}}{% endif %})
+      </a>
+    </li>
+  {% endfor %}
+
+ </ul>
+{% else %}
+  <p>There are no lenders available.</p>
+{% endif %}
+</div>       
+        
+        
+{% endblock %}

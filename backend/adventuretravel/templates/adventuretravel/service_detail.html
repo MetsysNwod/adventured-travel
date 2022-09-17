@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div style="padding-top: 100px;">
+<h1>Activity: {{ service.activity }}</h1>
+
+<p><strong>Lender:</strong> <a href="{{ service.lender.get_absolute_url }}">{{ service.lender }}</a></p>
+<p><strong>Description:</strong> {{ service.description }}</p>
+<p><strong>Price:</strong> {{ service.price }}</p> 
+<p><strong>Language:</strong> {{ service.language.all|join:", " }}</p>  
+<p><strong>Items:</strong> {{ service.items.all|join:", " }}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>Activities</h4>
+
+{% for copy in service.serviceinstance_set.all %}
+<hr>
+<p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'd' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>
+{% if copy.status != 'a' %}<p><strong>Will be available again:</strong> {{copy.engaged}}</p>{% endif %}
+<p><strong>Location: </strong> {{copy.location}}</p>
+<p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+
+{% endfor %}
+</div>
+</div>
+{% endblock %}
+

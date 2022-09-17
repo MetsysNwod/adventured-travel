@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div style="padding-top: 100px;">
+    <h1>Borrowed services</h1>
+
+    {% if serviceinstance_list %}
+    <ul>
+
+      {% for serviceinst in serviceinstance_list %} 
+      <li class="{% if serviceinst.is_overdue %}text-danger{% endif %}">
+        <a href="{% url 'service_detail' serviceinst.service.pk %}">{{serviceinst.service.activity}}</a> ({{ serviceinst.engaged }})        
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no services borrowed.</p>
+    {% endif %}
+  </div>
+{% endblock %}
