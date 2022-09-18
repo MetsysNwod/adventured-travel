@@ -1,10 +1,53 @@
-{% extends "base_generic.html" %}
 
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/stylesignup.css' %}">
 {% block title %} <title>Registrate</title>{% endblock %}
 
 {% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/stylesignup.css' %}">
+
+<header class="encabezado">
+    <div class="texto-logo">
+        <p>Adventured Travel</p>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Nosotros</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Precios</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Contactar</span></a>
+    </nav>
+
+    <nav class="redes-sociales">
+        <div class="instagram">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/instagram.png' %}" alt="Instagran">
+            </a>
+        </div>
+
+        <div class="twitter">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/twitter.png' %}"
+                    alt="Twitter"></a>
+        </div>
+
+        <div class="whatsapp">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/whatsapp.png' %}"
+                    alt="Whatsapp"></a>
+        </div>
+
+        <div class="youtube">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/youtube.png' %}"
+                    alt="Youtube"></a>
+        </div>
+    </nav>
+
+</header>
+
+
 
 <section class="home">
     <div class="formulario-registro">
@@ -75,4 +118,66 @@
         </form>
     </div>
 </section>
+
+
+<footer class="piedepagina-registro">
+
+    <div class="texto-logo-registro">
+        <p>Adventured Travel</p>
+    </div>
+
+    <nav class="nav-links-piedepagina">
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Nosotros</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Caracteristicas</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Precios</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Precios</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Ayuda</span></a>
+        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Políticas de
+                pribacidad</span></a>
+    </nav>
+
+    <div class="divisor"></div>
+
+    <div class="texto-piedepagina-signup">
+        <p>© 2022 Adventured Travel. Todos los derechos reservados.</p>
+    </div>
+
+    <nav class="redes-footer">
+        <div class="instagram">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">
+                <img src="{% static '/icons/instagram.png' %}" alt="Instagran">
+            </a>
+        </div>
+
+        <div class="twitter">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/twitter.png' %}"
+                    alt="Twitter"></a>
+        </div>
+
+        <div class="whatsapp">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/whatsapp.png' %}"
+                    alt="Whatsapp"></a>
+        </div>
+
+        <div class="youtube">
+            <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><img src="{% static '/icons/youtube.png' %}"
+                    alt="Youtube"></a>
+        </div>
+    </nav>
+
+
+</footer>
+
+
 {% endblock content %}
+

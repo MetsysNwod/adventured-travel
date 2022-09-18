@@ -72,7 +72,7 @@ class AvailableServicesAllListView(PermissionRequiredMixin, generic.ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        return ServiceInstance.objects.filter(status__exact='o').order_by('engaged')
+        return ServiceInstance.objects.filter(status__exact='i').order_by('engaged')
     
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect

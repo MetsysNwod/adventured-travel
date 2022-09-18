@@ -9,7 +9,7 @@
 .redes-sociales {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px;
     gap: 14px;
 
@@ -48,7 +48,7 @@
 
     flex: none;
     order: 2;
-    align-self: flex-start;
+    align-self: center;
     flex-grow: 0;
 }
 
@@ -65,18 +65,18 @@
 .formulario-registro:first-child {
 
     flex: 1;
-    padding: 25px;
+    padding: 0px;
     min-width: 240px;
     position: absolute;
     width: 532px;
-    height: 800px;
+    height: 720px;
     left: 2%;
-    top: 7.5%;
+    
     min-width: 240px;
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 51.74px;
     margin: 20px;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     z-index: 2;
 }
 
@@ -314,7 +314,7 @@
     width: 72px;
     height: 72px;
     left: 742px;
-    top: 433px;
+    top: 344px;
 
     background: #FDA100;
     border-radius: 50%;
@@ -326,7 +326,7 @@
     width: 72px;
     height: 72px;
     left: 1042px;
-    top: 689px;
+    top: 600px;
 
     background: #FD6600;
     border-radius: 50%;
@@ -356,7 +356,7 @@
     position: absolute;
     width: 175px;
     height: 18px;
-    left: 45%;
+    left: 46.5%;
     top: 54px;
     min-width: 240px;
 
