@@ -30,6 +30,8 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
+# Categorias
+
 
 class Service(models.Model):
     activity = models.CharField(max_length=200)
@@ -41,6 +43,9 @@ class Service(models.Model):
     items = models.ManyToManyField(
         Items, help_text="Seleccione el contenido de su actividad.")
     language = models.ManyToManyField(Language, help_text="Seleccione los idiomas que maneja en las actividades.")
+    
+ # services cover  
+    services_cover = models.ImageField(verbose_name='Imagen',upload_to='services_cover', null=True, blank=True)
     
     class Meta:
         ordering = ['activity', 'lender']
@@ -57,7 +62,6 @@ class Service(models.Model):
         return ', '.join([language.name for language in self.language.all()[:3] ])
     display_items.short_description = 'Language'
 
-    
     def __str__(self):
         return self.activity
 
@@ -71,7 +75,7 @@ class ServiceInstance(models.Model):
         max_length=200, help_text="Ingrese direccion o coordenadas de la ubicacion en donde se prestara el servicio.")
     engaged = models.DateField(
         null=True, blank=True, help_text="Seleccione una fecha en que estara disponible la actividad.")
-    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)    
 
     @property
     def is_overdue(self):

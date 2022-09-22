@@ -6,6 +6,7 @@ from .models import Lender, Items, Service, ServiceInstance, Language
 admin.site.register(Items)
 admin.site.register(Language)
 
+
 class ServicesInline(admin.TabularInline):
 
     model = Service
@@ -26,7 +27,7 @@ class ServicesInstanceInline(admin.TabularInline):
 
 class ServiceAdmin(admin.ModelAdmin):
 
-    list_display = ('activity', 'lender', 'display_items')
+    list_display = ('activity', 'lender', 'display_items', 'services_cover')
     inlines = [ServicesInstanceInline]
 
 

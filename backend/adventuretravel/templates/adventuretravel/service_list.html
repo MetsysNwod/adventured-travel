@@ -1,22 +1,21 @@
 {% extends "base_generic.html" %}
-
+{% block title %}<title>Service list</title>{% endblock %}
 {% block content %}
+
 <div style="padding-top: 100px;">
-    <h1>Service List</h1>
+  <h1>Service List</h1>
 
-    {% if service_list %}
-    <ul>
+  {% if service_list %}
+  <ul>
+    {% for service in service_list %}
+    <li>
+      <a href="{{ service.get_absolute_url }}">{{ service.activity }}</a> ({{service.lender}})
+    </li>
+    {% endfor %}
+  </ul>
 
-      {% for service in service_list %}
-      <li>
-        <a href="{{ service.get_absolute_url }}">{{ service.activity }}</a> ({{service.lender}})
-      </li>
-      {% endfor %}
-
-    </ul>
-
-    {% else %}
-      <p>There are no services available on the platform.</p>
-    {% endif %}       
-  </div>
+  {% else %}
+  <p>There are no services available on the platform.</p>
+  {% endif %}
+</div>
 {% endblock %}

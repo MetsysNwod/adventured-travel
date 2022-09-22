@@ -139,12 +139,12 @@ class LenderDelete(PermissionRequiredMixin, DeleteView):
 # Classes created for the forms challenge
 class ServiceCreate(PermissionRequiredMixin, CreateView):
     model = Service
-    fields = ['activity', 'lender', 'description', 'price', 'items', 'language']
+    fields = ['activity', 'lender', 'description', 'price', 'items', 'language', 'services_cover']
     permission_required = 'adventuretravel.can_mark_returned'
 
 class ServiceUpdate(PermissionRequiredMixin, UpdateView):
     model = Service
-    fields = ['activity', 'lender', 'description', 'price', 'items', 'language']
+    fields = ['activity', 'lender', 'description', 'price', 'items', 'language', 'services_cover']
     permission_required = 'adventuretravel.can_mark_returned'
     
 class ServiceDelete(PermissionRequiredMixin, DeleteView):
@@ -183,4 +183,3 @@ class SignUpView(CreateView):
 from django.contrib.auth.views import LoginView
 class SignInView(LoginView):
     template_name = 'accounts/login.html'
-    

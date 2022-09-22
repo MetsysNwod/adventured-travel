@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block title %}<title>Services cover</title>{% endblock %}
+{% block content %}
+<main role="main"
+style="padding-top: 100px;">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-9 mx-auto mb-5">
+                <h3>Services cover</h3>
+                <form action="" method="post">{% csrf_token %}
+                    {{ fom.as_p }}
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+{% endblock %}

@@ -67,15 +67,15 @@
     flex: 1;
     padding: 0px;
     min-width: 240px;
-    position: absolute;
+    position: fixed;
     width: 532px;
     height: 720px;
     left: 2%;
-    
+    align-items: center;
     min-width: 240px;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0);
     border-radius: 51.74px;
-    margin: 20px;
+    margin: 10px;
     margin-bottom: 0px;
     z-index: 2;
 }
@@ -234,7 +234,8 @@
     color: #FFFFFF;
    
     border-color: #FD6600;
-    border-bottom: #FD6600;    
+    border-bottom: #FD6600;
+    border-right: #FD6600;
     position: absolute;
     width: 328.92px;
     height: 41.39px;
@@ -251,6 +252,26 @@
     background: rgba(253, 102, 0, 0.15);
     border-color: rgba(253, 102, 0, 0.15);
     border-bottom: rgba(253, 102, 0, 0.15);
+}
+
+.have-acount {
+    position: absolute;
+    width: 287px;
+    height: 28px;
+    left: 125px;
+    top: 690px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.have-acount a {
+    color: #FD6600;
 }
 
 .contenedor-circuloimg-signup {
@@ -468,3 +489,4 @@
     flex: none;
     flex-grow: 0;
 }
+

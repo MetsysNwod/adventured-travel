@@ -107,6 +107,7 @@ a {
     color: #FFFFFF;
     border-color: #FD6600;
     border-bottom: #FD6600;
+    border-right: #FD6600;
 }
 
 .boton-login input[type="submit"] {
@@ -153,6 +154,7 @@ a {
     border-color: #FD6600;
     border-bottom: #FD6600;
     background: #FD6600;
+    border-right: #FD6600;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -165,7 +167,7 @@ a {
     border-bottom: rgba(253, 102, 0, 0.15);
 }
 
-.texto-logo p {
+.texto-logo a{
  
     position: fixed;
     width: 208.5px;
@@ -304,6 +306,7 @@ a {
     background: #FD6600;
     border-color: #FD6600;
     border-bottom: #FD6600;
+    border-right: #FD6600;
     border-radius: 6px;
     cursor: pointer;
 }

@@ -7,9 +7,18 @@
 
 <header class="encabezado">
     <div class="texto-logo">
-        <p>Adventured Travel</p>
+        <a href="{% url 'index' %}">Adventured Travel</a>
     </div>
-
+    {%if user.is_authenticated%}
+    <nav class="nav-links">
+        <a href="{% url 'index' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Home</span></a>
+        <a href="{% url 'services' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>All services</span></a>
+        <a href="{% url 'lenders' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Lenders</span></a>
+    </nav>
+    {%else%}
     <nav class="nav-links">
         <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
             onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Nosotros</span></a>
@@ -18,6 +27,8 @@
         <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
             onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Contactar</span></a>
     </nav>
+    {% endif %}
+
 
     <nav class="redes-sociales">
         <div class="instagram">
@@ -98,26 +109,30 @@
                 <input type="submit" value="Registrarme">
             </div>
 
-            <div class="contenedor-circuloimg-signup">
-                <div class="circulo-rojo">
-        
-                    <picture>
-                        <img src="{% static 'imgs/signup-large.jpg' %}" alt="" />
-                    </picture>
-        
-                </div>
+            <div class="have-acount">
+                <p>¿Ya tiene una cuenta? <a href="{% url 'login'%}?next={{request.path}}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                    onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">Iniciar sesion</a></p>
             </div>
         
-            <div class="decoradores">
-                <div class="circulo-amarillo"></div>
-                <div class="circulo-naranjasignup"></div>
-        
-            </div>
-        
-
         </form>
     </div>
 </section>
+
+<div class="contenedor-circuloimg-signup">
+    <div class="circulo-rojo">
+
+        <picture>
+            <img src="{% static 'imgs/signup-large.jpg' %}" alt="" />
+        </picture>
+
+    </div>
+</div>
+
+<div class="decoradores">
+    <div class="circulo-amarillo"></div>
+    <div class="circulo-naranjasignup"></div>
+
+</div>
 
 
 <footer class="piedepagina-registro">
@@ -131,8 +146,6 @@
             onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Nosotros</span></a>
         <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
             onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Caracteristicas</span></a>
-        <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
-            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Precios</span></a>
         <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
             onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Precios</span></a>
         <a href="#" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
