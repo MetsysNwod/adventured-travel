@@ -1,56 +1,100 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/styleservice.css' %}">
-{% block title %} <title>Service</title>{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styleservice.css' %}">
+    {% block title %} <title>Service</title>{% endblock %}
+</head>
+
+<body>
+
+
+    <header class="headserv">
+        <div class="texto-logo">
+            <p><a href="{% url 'index' %}">Adventured Travel</a></p>
+
+        </div>
 
 
 
 
-    <div class="cover-service">
-        <picture>
-            <img class="cover" src="/media/{{service.services_cover}}" alt="{{service.activity}}">
-        </picture>
-    </div>
 
-    <div class="titulodescrip">
-        <h1>{{ service.activity }}</h1>
-        <p>{{ service.description }}</p>
-    </div>
-
-    <div class="precio">
-        <div class="auto-layout">
-            <div class="price">
-                <p><strong>Price: </strong>{{ service.price }}</p>
+        <div class="dropdown">            
+                <img src="{% static '/icons/avatar.png' %}" alt="Avatar" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"/>            
+            <div class="dropdown-content">        
+                <a href="{% url 'index' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Home</span></a>
+                <a href="{% url 'services' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>All services</span></a>
+                <a href="{% url 'lenders' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';"><span>Lenders</span></a>
+                <a href="{% url 'logout'%}?logged_out{{request.path}}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">Salir</a>        
             </div>
-            <div class="adcart">
-                <form action="#">
-                    <input type="submit" value="AD TO CART">
-                </form>
+        </div>
+
+        </nav>
+
+    </header>
+
+    <main class="'contservic">
+<div class="detailserv">
+        <div class="cover-service">
+            <picture>
+                <img class="cover" src="/media/{{service.services_cover}}" alt="{{service.activity}}">
+            </picture>
+        </div>
+
+        <div class="titulodescrip">
+            <h1>{{ service.activity }}</h1>
+            <p>{{ service.description }}</p>
+        </div>
+
+        <div class="precio">
+            <div class="auto-layout">
+                <div class="price">
+                    <p><strong>Price: </strong>{{ service.price }}</p>
+                </div>
+                <div class="adcart">
+                    <form action="#">
+                        <input type="submit" value="AD TO CART">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="moredetails">
+
+            <p><strong>Lender:</strong> <a href="{{ service.lender.get_absolute_url }}">{{ service.lender }}</a></p>
+
+
+            <p><strong>Language:</strong> {{ service.language.all|join:", " }}</p>
+            <p><strong>Items:</strong> {{ service.items.all|join:", " }}</p>
+
+            <div style="margin-left:20px;margin-top:20px">
+                <h4>Activities</h4>
+
+                {% for copy in service.serviceinstance_set.all %}
+                <hr>
+                <p
+                    class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'd' %}text-danger{% else %}text-warning{% endif %}">
+                    {{ copy.get_status_display }}</p>
+                {% if copy.status != 'a' %}<p><strong>Will be available again:</strong> {{copy.engaged}}</p>{% endif %}
+                <p><strong>Location: </strong> {{copy.location}}</p>
+                <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+
+                {% endfor %}
             </div>
         </div>
     </div>
-
-<div class="moredetails">
-
-    <p><strong>Lender:</strong> <a href="{{ service.lender.get_absolute_url }}">{{ service.lender }}</a></p>
+    </main>
 
 
-    <p><strong>Language:</strong> {{ service.language.all|join:", " }}</p>
-    <p><strong>Items:</strong> {{ service.items.all|join:", " }}</p>
+</body>
 
-    <div style="margin-left:20px;margin-top:20px">
-        <h4>Activities</h4>
-
-        {% for copy in service.serviceinstance_set.all %}
-        <hr>
-        <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'd' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>
-        {% if copy.status != 'a' %}<p><strong>Will be available again:</strong> {{copy.engaged}}</p>{% endif %}
-        <p><strong>Location: </strong> {{copy.location}}</p>
-        <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
-
-        {% endfor %}
-    </div>
-</div>
-
-
-{% endblock %}
+</html>

@@ -186,18 +186,23 @@
 
     position: absolute;
     width: 234px;
-    height: 19px;
+    height: 24px;
     left: 129px;
     top: 586.87px;
+    align-items: center;
+}
 
+.check-terminos p{
+    width: 300px;
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-
     font-feature-settings: 'salt' on, 'liga' off;
     color: rgba(0, 0, 0, 0.5);
+    padding-top: 0;
+
 }
 
 .check-terminos a {
@@ -240,7 +245,7 @@
     width: 328.92px;
     height: 41.39px;
     left: 101.26px;
-    top: 640.45px;
+    top: 635.45px;
     cursor: pointer;
     background: #FD6600;
     box-shadow: 0px 2.9566px 2.9566px rgba(0, 0, 0, 0.25), inset 0px 1.4783px 2.9566px rgba(255, 255, 255, 0.25), inset 0px -1.4783px 2.9566px rgba(0, 0, 0, 0.25);
@@ -259,14 +264,16 @@
     width: 287px;
     height: 28px;
     left: 125px;
-    top: 690px;
+    top: 680px;
+}
 
+.have-acount p{
+    width: 300px;
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
-
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -375,7 +382,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     position: absolute;
-    width: 175px;
+    width: 208.5px;
     height: 18px;
     left: 46.5%;
     top: 54px;
@@ -384,7 +391,7 @@
     font-family: 'Tahoma';
     font-style: normal;
     font-weight: 700;
-    font-size: 100%;
+    font-size: 14px;
     line-height: 18px;
 
     display: flex;
@@ -406,7 +413,7 @@
     gap: 24px;
     min-width: 240px;
     position: absolute;
-    width: 610px;
+    width: 480px;
     height: 26px;
     left: 38%;
     top: 108px;
@@ -417,8 +424,8 @@
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 20px;
 
     font-feature-settings: 'salt' on, 'liga' off;
 
@@ -443,7 +450,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 18px;
 
     font-feature-settings: 'salt' on, 'liga' off;
 
