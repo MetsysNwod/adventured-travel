@@ -2,18 +2,28 @@
 
 {% block content %}
 <div style="padding-top: 100px;">
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+    {% if form.errors %}
+    <div class="loginerror">
+        <p>Your username and password didn't match. Please try again.</p>
+    </div>
+    
+    {% endif %}
 
-{% if next %}
+    {% if next %}
     {% if user.is_authenticated %}
     <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+        please login with an account that has access.</p>
     {% else %}
     <p>Please login to see this page.</p>
     {% endif %}
-{% endif %}
+    {% endif %}
+</div>
+
+<div class="circulo-oran-login"></div>
+<div class="circulo-rojo-login"></div>
+<div class="circulo-amarillo-login"></div>
+<div class="circulo-naranjalogin"></div>
+<!---
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
@@ -31,9 +41,35 @@
 
 <input type="submit" value="login">
 <input type="hidden" name="next" value="{{ next }}">
-</form>
+</form> --->
 
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-</div>
+<section class="loginpage">
+    <div class="loginform">
+        <div class="titlelogin">
+            <h1>Login</h1>
+        </div>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="nombre">
+                <input type="text" name="{{form.username.name}}" id="nombre" autocomplete="name" required
+                    placeholder="Nombre de usuario">
+            </div>
+
+            <div class="password">
+                <input type="password" name="{{form.password.name}}" required placeholder="Contraseña">
+            </div>
+
+            <div class="login">
+                <input type="submit" value="Login">
+            </div>
+
+            <div class="reset">
+                <p>Lost password? <a href="{% url 'password_reset' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+                    onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">reset</a></p>
+            </div>
+
+        </form>
+    </div>
+</section>
+
 {% endblock %}

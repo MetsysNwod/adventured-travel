@@ -2,11 +2,20 @@
 
 {% block content %}
 
-<div style="padding-top: 100px;">
-<p>Logged out!</p>
-<a href="{% url 'login'%}">Click here to login again.</a>
+<div class="logged-out">
+    <div class="content-logout">
+        <div>
+            <h1>Logged out!</h1>
+        </div>
+        <div>
+            <a href="{% url 'login'%}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">Click here to login again.</a>
+        </div>
+        <div>
+            <a href="{% url 'index' %}" onmouseout="this.style.opacity=1;this.filters.alpha.opacity='100';"
+            onmouseover="this.style.opacity=0.2;this.filters.alpha.opacity='20';">Back to start</a>
+        </div>
+    </div>
 </div>
-<div>
-    <a href="{% url 'index' %}">Back to home</a>
-</div>
+
 {% endblock %}

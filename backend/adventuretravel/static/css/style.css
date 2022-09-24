@@ -224,6 +224,7 @@ a {
     background-color: rgb(255, 255, 255);
     min-width: 70px;
     z-index: 1;
+    border-radius: 2%;
 }
 
 .dropdown-content a, p{
@@ -377,12 +378,13 @@ a {
     width: 100%;
     bottom: 0%;
     background: #0B0D17;
+    align-items: center;
 }
 
 .texto-footer p {
 
     position: absolute;
-    width: 402px;
+    width: 420px;
     height: 24px;
     left: calc(50% - 398px/2 + 63px);
     top: calc(50% - 24px/2);
@@ -396,4 +398,220 @@ a {
     line-height: 24px;
 
     font-feature-settings: 'salt' on, 'liga' off;
+}
+
+/* Style login */
+
+.loginform:first-child {
+
+    flex: 1;
+    padding: 0px;
+    min-width: 240px;
+    position: fixed;
+    width: 532px;
+    height: 720px;
+    left: 2%;
+    align-items: center;
+    min-width: 240px;
+    background: rgba(235, 15, 15, 0);
+    border-radius: 51.74px;
+    margin: 10px;
+    margin-bottom: 0px;
+    z-index: 2;
+}
+
+.titlelogin h1 {
+
+    position: absolute;
+    width: 148px;
+    height: 30px;
+    left: 101.26px;
+    top: 168.53px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+
+    font-feature-settings: 'salt' on, 'liga' off;
+
+    color: #474A57;
+}
+
+.nombre [type="text"] {
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 328.92px;
+    height: 41.39px;
+    left: 101.26px;
+    top: 232.09px;
+
+    border: 1.4783px solid rgba(11, 70, 84, 0.25);
+    border-radius: 5.91319px;
+}
+
+.password [type="password"] {
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 328.92px;
+    height: 41.39px;
+    left: 101.26px;
+    top: 291.22px;
+
+    border: 1.4783px solid rgba(11, 70, 84, 0.25);
+    border-radius: 5.91319px;
+}
+
+.login input[type="submit"]{
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    align-items: center;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+
+    color: #FFFFFF;
+   
+    border-color: #FD6600;
+    border-bottom: #FD6600;
+    border-right: #FD6600;
+    position: absolute;
+    width: 328.92px;
+    height: 41.39px;
+    left: 101.26px;
+    top: 350.35px;
+    cursor: pointer;
+    background: #FD6600;
+    box-shadow: 0px 2.9566px 2.9566px rgba(0, 0, 0, 0.25), inset 0px 1.4783px 2.9566px rgba(255, 255, 255, 0.25), inset 0px -1.4783px 2.9566px rgba(0, 0, 0, 0.25);
+    border-radius: 11.826px;
+}
+
+.login input:hover[type="submit"]{
+    color: #FD6600;
+    background: rgba(253, 102, 0, 0.15);
+    border-color: rgba(253, 102, 0, 0.15);
+    border-bottom: rgba(253, 102, 0, 0.15);
+}
+
+.reset {
+    position: absolute;
+    width: 287px;
+    height: 28px;
+    left: 125px;
+    top: 401.48px;
+}
+
+.reset p{
+    width: 300px;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.reset a {
+    color: #FD6600;
+}
+
+.loginerror {
+    position: absolute;
+    width: 287px;
+    height: 28px;
+    left: 150px;
+    top: 550.61px;
+}
+
+.loginerror p{
+    width: 300px;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.circulo-oran-login {
+
+    position: fixed;
+    width: 440px;
+    height: 440px;
+    right: 30%;
+    top: calc(50% - 900px/2 + 36px);    
+    background: rgba(253, 102, 0, 0.35);
+    border-radius: 50%;
+}
+
+.circulo-rojo-login {
+
+    position: fixed;
+    width: 640px;
+    height: 640px;
+
+    left: 70%;
+    top: calc(50% - 640px/2 + 36px);
+
+    background: #f3001c6c;
+    border-radius: 50%;
+}
+
+.circulo-amarillo-login {
+
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    left: 642px;
+    top: 244px;
+
+    background: #FDA100;
+    border-radius: 50%;
+}
+
+.circulo-naranjalogin {
+
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    left: 1142px;
+    top: 700px;
+
+    background: #FD6600;
+    border-radius: 50%;
+}
+
+/* Style logged out */
+
+
+.logged-out {
+
+    position: fixed;
+    width: 440px;
+    height: 440px;
+    right: calc(50% - 440px/2 + 36px);
+    top: calc(50% - 500px/2 + 36px);    
+    background: rgba(253, 102, 0, 0.35);
+    border-radius: 50%;
+
+}
+
+.content-logout{
+    padding-top: 170px;
+    padding-left: 60px;
+    font-family: 'Helvetica';
+    
+}
+
+.content-logout a{
+    color: rgba(0, 0, 0, 0.5);
 }
