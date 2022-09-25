@@ -9,7 +9,9 @@
   <ul>
     {% for service in service_list %}
     <li>
-      <a href="{{ service.get_absolute_url }}">{{ service.activity }}</a> ({{service.lender}})
+      <br>
+      <a href="{{ service.get_absolute_url }}">{{ service.activity }}</a> ({{service.lender}})<!---<img class="cover"
+        src="/media/{{service.services_cover}}" alt="{{ service.activity }}" style="width: 302px; height: 353px; left: 0px; top: 0.27px; object-fit: cover; border-radius: 18.31px;">--->
     </li>
     {% endfor %}
   </ul>
