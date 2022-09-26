@@ -1,6 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<div style="padding-top: 100px;">
     <h1>Renew: {{service_instance.service.activity}}</h1>
     <p>Borrower: {{service_instance.borrower}}</p>
     <p {% if service_instance.is_overdue %} class="text-danger"{% endif %}>Due date: {{service_instance.engaged}}</p>
@@ -12,4 +13,9 @@
         </table>
         <input type="submit" value="Submit">
     </form>
+</div>
+<div class="circulo-oran-login"></div>
+<div class="circulo-rojo-login"></div>
+<div class="circulo-amarillo-login"></div>
+<div class="circulo-naranjalogin"></div>
 {% endblock %}

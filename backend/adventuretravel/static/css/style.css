@@ -642,8 +642,66 @@ p {
 
 }
 
+.email [type="email"] {
 
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 328.92px;
+    height: 41.39px;
+    left: 101.26px;
+    top: 291.22px;
+
+    border: 1.4783px solid rgba(11, 70, 84, 0.25);
+    border-radius: 5.91319px;
+}
+.titlereset p{
+    
+    position: absolute;
+
+    left: 85px;
+    top: 168.53px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+
+    font-size: 16px;
+    line-height: 16px;
+
+    font-feature-settings: 'salt' on, 'liga' off;
+
+    color: #474A57;
+}
+.new_password1 [type="password"]{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 328.92px;
+    height: 41.39px;
+    left: 101.26px;
+    top: 232.09px;
+
+    border: 1.4783px solid rgba(11, 70, 84, 0.25);
+    border-radius: 5.91319px;
+}
+
+.new_password2 [type="password"]{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 328.92px;
+    height: 41.39px;
+    left: 101.26px;
+    top: 291.22px;
+
+    border: 1.4783px solid rgba(11, 70, 84, 0.25);
+    border-radius: 5.91319px;
+}
+
+.resetdone a{
+    color: #FD6600;
+}
+.resetdone a:hover{
+    color: var(--color-secondary-1-0);
+}
 /* Service list */
-
-
-
